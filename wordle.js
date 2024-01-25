@@ -5,29 +5,19 @@ var row = 0; //current guess (attempt n)
 var col = 0; //current letter for that attempt
 
 var gameOver = false;
-const fiveLetterWords = [
-  "APPLE", "TABLE", "CHAIR", "CLOUD", "DANCE",
-  "GRAPE", "BEACH", "SMILE", "HAPPY", "LAUGH",
-  "SUNNY", "OCEAN", "MUSIC", "RIVER", "SWEEP",
-  "BRUSH", "GREEN", "PIANO", "ZEBRA", "FENCE",
-  "JELLY", "TOAST", "DRINK", "SWIRL", "NIGHT",
-  "CRANE", "GIANT", "PUPPY", "STAIR", "SHOE",
-  "LASER", "TOWER", "LEMON", "GRILL", "PLANT",
-  "QUEEN", "RULER", "SHARP", "STONE", "TRAIL",
-  "WRIST", "SHAKE", "SMASH", "DREAM", "BLINK",
-  "SNAIL", "CHESS", "QUAKE", "CHAIR", "FAITH",
-  "SCENT", "YOUTH", "TORCH", "GRAIN", "NOVEL",
-  "CLOUD", "MELON", "VAULT", "SPIRE", "SWAMP",
-  "TIGER", "MAGIC", "STORM", "WHALE", "LUNAR",
-  "CROWN", "SLOPE", "CHARM", "ROVER", "DREAM",
-  "STUMP", "POUCH", "TWIST", "ROAST", "CREEK",
-  "SLOPE", "TORCH", "FROST", "GLOBE", "SWING",
-  "CRAFT", "SPIKE", "LUNAR", "PLUCK", "POWER",
-  "SNACK", "SWEEP", "STARE", "TRAMP", "SPIRE",
-  "WRIST", "RIDER", "DRIFT", "POUCH", "BLAZE",
-  "PASTA", "FRAME", "JUICE", "SLEET", "CREEK"
-];
 
+const fiveLetterWords = [
+  "APPLE", "CHAIR", "BLUE", "JUMP", "FROG",
+  "MILK", "SUNNY", "BIRD", "DANCE", "RIVER",
+  "PLANT", "SMILE", "GRASS", "CAKE", "HAPPY",
+  "ROCKS", "QUIET", "SLEEP", "LEMON", "WATER",
+  "FIRE", "SNAKE", "LAUGH", "SWEET", "CRANE",
+  "TABLE", "LUNCH", "MOUSE", "HOUSE", "SMOKE",
+  "GLASS", "GRAND", "MUSIC", "STARS", "CLOUD",
+  "CHALK", "GRASS", "STAIR", "SHEET", "STORM",
+  "CROWN", "CRISP", "BRUSH", "QUICK", "WATER",
+  "SHIRT", "THORN", "PLATE", "BLINK", "PLUCK"
+];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
 
