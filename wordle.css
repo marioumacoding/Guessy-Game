@@ -1,0 +1,49 @@
+body{
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+hr{
+  width: 500px;
+}
+#title{
+  font-size: 36px;
+}
+#board{
+  width: 350px;
+  height: 420px;
+  /* background-color: yellow; */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: 3px; */
+}
+.tile{
+  /* box */
+  border: 2px solid lightgray;
+  width: 60px;
+  height: 60px;
+  margin: 2.5px; /*total 5px away from each tile */
+
+  /* text */
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.correct{
+  background-color: green;
+  color: white;
+  border-color: white;  /*to blend with the background */
+}
+.present{
+  background-color: rgb(191, 191, 36);
+  color: white;
+  border-color: white;  /*to blend with the background */
+}
+.absent{
+  background-color: grey;
+  color: white;
+  border-color: white;  /*to blend with the background */
+}
