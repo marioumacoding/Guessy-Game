@@ -45,7 +45,7 @@ hr {
 .correct {
   background-color: green;
   color: white;
-  border-color: rgba(13, 252, 65, 0.082);
+  border-color: rgba(3, 108, 12, 0.875);
   /*to blend with the background */
 }
 
