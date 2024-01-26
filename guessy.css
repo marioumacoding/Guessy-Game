@@ -7,13 +7,13 @@ body {
 
 hr {
   margin-top: -5px;
-  background-color:rgba(128, 128, 128, 0.144);
-  border-color:rgba(128, 128, 128, 0.144);
+  background-color: rgba(128, 128, 128, 0.144);
+  border-color: rgba(128, 128, 128, 0.144);
 
 }
 
 #title {
- font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
   margin-top: 5px;
   font-size: 30px;
   font-weight: bolder;
@@ -24,7 +24,7 @@ hr {
   width: 300px;
   height: 360px;
   /* background-color: yellow; */
-  margin: 0 auto; 
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   /* margin-top: 3px; */
@@ -68,24 +68,24 @@ hr {
   /*to blend with the background */
 }
 
-#answer{
+#answer {
   color: white;
 }
 
-.keyboard-row{
+.keyboard-row {
   border: none;
   /* width: 484px;
   height: 198px; */
-  margin: 0px auto; 
+  margin: 0px auto;
   /* background-color: yellow; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-padding-bottom: 4px;
+  padding-bottom: 4px;
 
 }
 
-.key-tile{
+.key-tile {
   /* box */
   background-color: rgba(211, 211, 211, 0.289);
   width: 43px;
@@ -103,7 +103,7 @@ padding-bottom: 4px;
   cursor: pointer;
 }
 
-.key-enter{
+.key-enter {
   /* box */
   background-color: rgba(211, 211, 211, 0.289);
   width: 73px;

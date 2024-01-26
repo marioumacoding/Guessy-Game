@@ -52,7 +52,7 @@ function intialize() {
     let currRow = keyboard[i]; // take the first row from the keyboard
     let keyboardRow = document.createElement("div"); //create the row 
     keyboardRow.classList.add("keyboard-row"); // add the style in css
-   
+
     for (let j = 0; j < currRow.length; j++) {
       let keyTile = document.createElement("div");
 
@@ -73,7 +73,7 @@ function intialize() {
       if (key == "Enter" || key == "⌫") {
         keyTile.classList.add("key-enter");
       }
-      else{
+      else {
         keyTile.classList.add("key-tile");
       }
 
