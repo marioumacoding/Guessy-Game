@@ -76,6 +76,7 @@ hr {
   border: none;
   /* width: 484px;
   height: 198px; */
+  width: 100%;
   margin: 0px auto;
   /* background-color: yellow; */
   display: flex;
