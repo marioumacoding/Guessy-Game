@@ -124,33 +124,6 @@ hr {
   cursor: pointer;
 }
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 600px) {
-  .key-tile {
-    /* box */
-    background-color: rgba(211, 211, 211, 0.289);
-    width: 30px;
-    height: 55px;
-    margin: 2.5px;
-    border-radius: 5px;
-    /*total 5px away from each tile */
-
-    /* text */
-    color: rgb(255, 254, 254);
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .key-enter {
-    width: 45px;
-    height: 55px;
-    font-size: 16px;
-  }
-}
-
 .entered-word {
   color: white;
 }
@@ -181,3 +154,30 @@ height: 50px; */
   display: flex;
   justify-content: flex-end;
 } */
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .key-tile {
+    /* box */
+    background-color: rgba(211, 211, 211, 0.289);
+    width: 30px;
+    height: 55px;
+    margin: 2.5px;
+    border-radius: 5px;
+    /*total 5px away from each tile */
+
+    /* text */
+    color: rgb(255, 254, 254);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .key-enter {
+    width: 45px;
+    height: 55px;
+    font-size: 16px;
+  }
+}
