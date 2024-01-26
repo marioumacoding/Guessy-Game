@@ -17,7 +17,8 @@ hr {
   margin-top: 5px;
   font-size: 30px;
   font-weight: bolder;
-  color: red;
+  color: white;
+  margin-right: 10px;
 }
 
 #board {
@@ -69,6 +70,7 @@ hr {
 }
 
 #answer {
+  margin-top: -6px;
   color: white;
 }
 
@@ -121,28 +123,61 @@ hr {
   align-items: center;
   cursor: pointer;
 }
-/* Media query for smaller screens */
-@media only screen and (max-width: 600px) { 
-.key-tile {
-  /* box */
-  background-color: rgba(211, 211, 211, 0.289);
-  width: 30px;
-  height: 55px;
-  margin: 2.5px;
-  border-radius: 5px;
-  /*total 5px away from each tile */
 
-  /* text */
-  color: rgb(255, 254, 254);
-  font-size: 16px;
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .key-tile {
+    /* box */
+    background-color: rgba(211, 211, 211, 0.289);
+    width: 30px;
+    height: 55px;
+    margin: 2.5px;
+    border-radius: 5px;
+    /*total 5px away from each tile */
+
+    /* text */
+    color: rgb(255, 254, 254);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .key-enter {
+    width: 45px;
+    height: 55px;
+    font-size: 16px;
+  }
+}
+
+.entered-word {
+  color: white;
+}
+
+#title-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+button {
+  /* width: 50px;
+height: 50px; */
+  font-family: 'Josefin Sans', sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 11px;
+  padding-right: 11px;
+  margin-top: -10px;
+  border-style: dashed;
+  background-color: rgb(184, 182, 182);
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
 }
-.key-enter{
-  width: 45px;
-  height: 55px;
-  font-size: 16px;
-}
-}
+/* #buttons-container{
+  display: flex;
+  justify-content: flex-end;
+} */

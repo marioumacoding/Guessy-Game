@@ -4,10 +4,11 @@ var width = 5; // length of the word
 var row = 0; //current guess (attempt n)
 var col = 0; //current letter for that attempt
 
+var inp = ""; // the full word entered by the user
 var gameOver = false;
 
 const fiveLetterWords = [
-  "APPLE", "CHAIR", "BLUE", "JUMP", "FROG",
+  "APPLE", "CHAIR", "BLOOM", "JUMP", "FROG",
   "MILK", "SUNNY", "BIRD", "DANCE", "RIVER",
   "PLANT", "SMILE", "GRASS", "CAKE", "HAPPY",
   "ROCKS", "QUIET", "SLEEP", "LEMON", "WATER",
@@ -22,12 +23,21 @@ const fiveLetterWords = [
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
 // Use the random index to get a random word
-let chosen_word = fiveLetterWords[randomIndex];
-let word = chosen_word;
+let word = fiveLetterWords[randomIndex];
+// let word = chosen_word;
 window.onload = function () {
   intialize();
-}
 
+  //event listener to the refresh button
+  document.getElementById("refresh").addEventListener("click", function () {
+    location.reload();
+  });
+ //event listener to the give up button
+  document.getElementById("give-up").addEventListener("click", function () {
+    gameOver =true;
+    document.getElementById("answer").innerText = word;
+  });
+}
 function intialize() {
   // Create the game board
   for (let r = 0; r < height; r++) { //6
@@ -102,6 +112,7 @@ function intialize() {
         let currTile = document.getElementById(row.toString() + '-' + col.toString());
         if (currTile.innerText == "") {
           currTile.innerText = e.code[3];
+          inp += e.code[3];
           col += 1;
         }
       }
@@ -109,6 +120,8 @@ function intialize() {
     else if (e.code == "Backspace") {
       if (0 < col && col <= width) {  //0 - 4 
         col -= 1;
+        inp = inp.slice(0, -1); // Remove the last character from inp 
+        // (instead of converting it to array of char and then back to string)
       }
       let currTile = document.getElementById(row.toString() + '-' + col.toString());
       currTile.innerText = "";
@@ -120,6 +133,7 @@ function intialize() {
       update();
       row += 1; //start new row
       col = 0; //start at 0 for new row
+      inp = "";
     }
 
     if (!gameOver && row == height) {
@@ -131,12 +145,14 @@ function intialize() {
 
   function update() {
     let correct = 0;
-    let word = chosen_word;
+    let word = fiveLetterWords[randomIndex];
+    // let word = "HOUSE";
+    var flag = false; // Added to track if the letter is found in the word
+
     for (let c = 0; c < width; c++) {
 
       let currTile = document.getElementById(row.toString() + '-' + c.toString());
       let letter = currTile.innerText;
-
       // Is the letter entered by the user in the correct position?
       if (word[c] == letter) {
         currTile.classList.add("correct");
@@ -144,22 +160,48 @@ function intialize() {
         word = word.split('');
         word[c] = 'x';
         word = word.join('');
+        // alert(word);
       }
+
+      // check if the letter is in the word 
+      //              and
+      // if he entered the right position and the wrong at the same time
+      else if (word[c] != letter && word.includes(letter)) {
+        flag = false;
+        for (let m = c + 1; m <= width; m++) { // 1 -- 4
+          if (letter == inp[m]) {  // 2
+            flag = true;
+            currTile.classList.add("absent");
+          }
+        }
+        if ((c == 0 || c == 4) || (inp.includes(letter))) {
+          currTile.classList.add("present");
+        }
+      }
+
       // check if the letter is in the word
-      else if (word.includes(letter)) {
-        currTile.classList.add("present");
-        word = word.split('');
-        word[c] = 'x';
-        word = word.join('');
-      }
-      // the letter is not found
+      //  else if (word.includes(letter) && flag) {
+      //     currTile.classList.add("present");
+      //     word = word.split('');
+      //     const index = word.indexOf(letter);
+      //     word[index] = 'x';
+      //     word = word.join(''); 
+      //      //     alert(word);
+      //   }
+
+      // // the letter is not found
       else {
         currTile.classList.add("absent");
       }
+      // Check if the entered word is valid
       if (correct == width) {
         gameOver = true;
-        //do an alert of winner
+        alert("Congratulations! You guessed the word.");
       }
+      // else {
+      //   // User entered an incorrect word
+      //   alert("Sorry, that's not the correct word.");
+      // }
     }
   }
 }

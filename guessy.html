@@ -3,7 +3,10 @@
     <title>Guessy</title>
     <meta charset="UTF-8">
     <meta name="viewport"
-      content="width=device-width,initial-scale =0">
+      content="width=device-width,initial-scale =1">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -27,15 +30,27 @@
   </head>
 
   <body>
-    <h1 id="title">GUESSY</h1>
+    <div id ="title-container">
+      <h1 id="title">GUESSY</h1>
+      <div id="buttons-container">
+        <button id = "refresh">&#x21bb;</button> 
+        <!-- <button id = "give-up">give up :&#40;</button> -->
+      </div>
+      
+    </div>
+
+    
+    
     <hr>
     <div id="board">
     </div>
+    
     <br>
 
     <div id="keyboard">
     </div>
 
+    <div id="entered-word"></div>
     <br>
     <h1 id="answer"></h1>
   </body>
