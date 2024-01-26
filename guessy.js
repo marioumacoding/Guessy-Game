@@ -17,10 +17,11 @@ const fiveLetterWords = [
   "CHALK", "GRASS", "STAIR", "SHEET", "STORM",
   "CROWN", "CRISP", "BRUSH", "QUICK", "WATER",
   "SHIRT", "THORN", "PLATE", "BLINK", "PLUCK",
-  "PAULA","SKIRT","CHASE", "BLOOD","CROWD"
+  "PAULA", "SKIRT", "CHASE", "BLOOD", "CROWD"
 ];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
+// Use the random index to get a random word
 let word = fiveLetterWords[randomIndex];
 
 window.onload = function () {
@@ -40,8 +41,59 @@ function intialize() {
     }
   }
 
+  //create the keyboard
+  let keyboard = [
+    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+    ["Enter", "Z", "X", "C", "V", "B", "N", "M", "⌫"]
+  ]
+
+  for (let i = 0; i < keyboard.length; i++) { //3 
+    let currRow = keyboard[i]; // take the first row from the keyboard
+    let keyboardRow = document.createElement("div"); //create the row 
+    keyboardRow.classList.add("keyboard-row"); // add the style in css
+   
+    for (let j = 0; j < currRow.length; j++) {
+      let keyTile = document.createElement("div");
+
+      let key = currRow[j]; // the letters inside the row
+      keyTile.innerText = key;
+      if (key == "Enter") {
+        keyTile.id = "Enter";
+      }
+      else if (key == "⌫") {
+        keyTile.id = "Backspace";
+      }
+      else if ("A" <= key && key <= 'Z') {
+        keyTile.id = "Key" + key; // "Key"+"A"
+      }
+
+      keyTile.addEventListener("click", processKey);
+
+      if (key == "Enter" || key == "⌫") {
+        keyTile.classList.add("key-enter");
+      }
+      else{
+        keyTile.classList.add("key-tile");
+      }
+
+      keyboardRow.appendChild(keyTile);
+
+    }
+    document.getElementById("keyboard").appendChild(keyboardRow);
+  }
+
+  function processKey() {
+    let e = { "code": this.id };
+    processInput(e);
+  }
+
   //listen for key press
   document.addEventListener("keyup", (e) => {
+    processInput(e);
+  })
+
+  function processInput(e) { // we made a function because we used it twice
     if (gameOver) return;
 
     // alert(e.code); //will tell us what key was pressed
@@ -74,14 +126,12 @@ function intialize() {
       gameOver = true;
       document.getElementById("answer").innerText = word;
     }
+  }
 
-  })
 
   function update() {
     let correct = 0;
-// Use the random index to get a random word
-    // let word = fiveLetterWords[randomIndex];
-    let word = "SUNNY";
+    let word = fiveLetterWords[randomIndex];
     for (let c = 0; c < width; c++) {
 
       let currTile = document.getElementById(row.toString() + '-' + c.toString());

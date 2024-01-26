@@ -2,22 +2,27 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   background-color: rgb(18, 18, 19);
+  margin: 0;
 }
 
 hr {
-  width: 500px;
+  margin-top: -5px;
+  background-color:rgba(128, 128, 128, 0.144);
+  border-color:rgba(128, 128, 128, 0.144);
+
 }
 
 #title {
-  margin-top: 30px;
-  font-size: 36px;
+ font-family: 'Playfair Display', serif;
+  margin-top: 5px;
+  font-size: 30px;
   font-weight: bolder;
   color: white;
 }
 
 #board {
-  width: 350px;
-  height: 420px;
+  width: 300px;
+  height: 360px;
   /* background-color: yellow; */
   margin: 0 auto; 
   display: flex;
@@ -28,14 +33,14 @@ hr {
 .tile {
   /* box */
   border: 2px solid rgba(211, 211, 211, 0.289);
-  width: 60px;
-  height: 60px;
+  width: 49.5px;
+  height: 49.5px;
   margin: 2.5px;
   /*total 5px away from each tile */
 
   /* text */
   color: rgb(255, 254, 254);
-  font-size: 36px;
+  font-size: 25px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -65,4 +70,53 @@ hr {
 
 #answer{
   color: white;
+}
+
+.keyboard-row{
+  border: none;
+  /* width: 484px;
+  height: 198px; */
+  margin: 0px auto; 
+  /* background-color: yellow; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+padding-bottom: 4px;
+
+}
+
+.key-tile{
+  /* box */
+  background-color: rgba(211, 211, 211, 0.289);
+  width: 43px;
+  height: 58px;
+  margin: 2.5px;
+  border-radius: 5px;
+  /*total 5px away from each tile */
+
+  /* text */
+  color: rgb(255, 254, 254);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.key-enter{
+  /* box */
+  background-color: rgba(211, 211, 211, 0.289);
+  width: 73px;
+  height: 58px;
+  margin: 2.5px;
+  border-radius: 5px;
+  /*total 5px away from each tile */
+
+  /* text */
+  color: rgb(255, 254, 254);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
