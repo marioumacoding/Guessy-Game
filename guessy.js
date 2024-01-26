@@ -22,8 +22,8 @@ const fiveLetterWords = [
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
 // Use the random index to get a random word
-let word = fiveLetterWords[randomIndex];
-
+let chosen_word = fiveLetterWords[randomIndex];
+let word = chosen_word;
 window.onload = function () {
   intialize();
 }
@@ -131,7 +131,7 @@ function intialize() {
 
   function update() {
     let correct = 0;
-    let word = fiveLetterWords[randomIndex];
+    let word = chosen_word;
     for (let c = 0; c < width; c++) {
 
       let currTile = document.getElementById(row.toString() + '-' + c.toString());
