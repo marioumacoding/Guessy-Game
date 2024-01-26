@@ -8,17 +8,39 @@ var inp = ""; // the full word entered by the user
 var gameOver = false;
 
 const fiveLetterWords = [
-  "APPLE", "CHAIR", "BLOOM", "JUMP", "FROG",
-  "MILK", "SUNNY", "BIRD", "DANCE", "RIVER",
-  "PLANT", "SMILE", "GRASS", "CAKE", "HAPPY",
+  "APPLE", "CHAIR", "BLOOM", "FROG",
+  "SUNNY", "BIRD", "DANCE", "RIVER",
+  "PLANT", "SMILE", "GRASS", "HAPPY",
   "ROCKS", "QUIET", "SLEEP", "LEMON", "WATER",
-  "FIRE", "SNAKE", "LAUGH", "SWEET", "CRANE",
+  "FIRED", "SNAKE", "LAUGH", "SWEET", "CRANE",
   "TABLE", "LUNCH", "MOUSE", "HOUSE", "SMOKE",
   "GLASS", "GRAND", "MUSIC", "STARS", "CLOUD",
   "CHALK", "GRASS", "STAIR", "SHEET", "STORM",
   "CROWN", "CRISP", "BRUSH", "QUICK", "WATER",
   "SHIRT", "THORN", "PLATE", "BLINK", "PLUCK",
-  "PAULA", "SKIRT", "CHASE", "BLOOD", "CROWD"
+  "PAULA", "SKIRT", "CHASE", "BLOOD", "CROWD",
+  "ALERT", "ARISE", "ACTOR", "ADULT",
+  "BOOST", "BRAIN", "BROWN", "BUILT",
+  "CARRY", "CHILD", "CLOSE", "COUNT",
+  "DANCE", "DREAM", "DRIVE", "DRINK",
+  "EARLY", "ENJOY", "EMPTY", "ENTER",
+  "FAULT", "FIELD", "FLASH", "FLUID",
+  "GLOBE", "GRAND", "GREAT", "GROSS",
+  "HAPPY", "HOUSE", "HUMAN", "HEAVY",
+  "ISSUE", "INPUT", "INDEX", "IMAGE",
+  "JUICE", "JOINT", "JELLY", "JEANS",
+  "KNOWN", "KNOCK", "KNIFE", "KILLS",
+  "LIGHT", "LEVEL", "LEAVE", "LEARN",
+  "MIXER", "MEALS", "MARRY", "MAGIC",
+  "NOVEL", "NOISE", "NEWLY", "NIGHT",
+  "OUGHT", "OTHER", "ORDER", "OFFER",
+  "PAINT", "PAPER", "ROUND", "ROYAL",
+  "SHARE", "SHARP", "SHAPE", "SCORE",
+  "TAKEN", "TEACH", "THANK", "THICK",
+  "UPSET", "USAGE", "USUAL", "UPPER",
+  "VALUE", "VIDEO", "VIRAL", "VOICE",
+  "WORST", "WHOLE", "WORLD", "WRONG",
+  "YOUTH", "YEARS", "YOUNG", "YARDS", "ZEROS"
 ];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
@@ -32,9 +54,9 @@ window.onload = function () {
   document.getElementById("refresh").addEventListener("click", function () {
     location.reload();
   });
- //event listener to the give up button
+  //event listener to the give up button
   document.getElementById("give-up").addEventListener("click", function () {
-    gameOver =true;
+    gameOver = true;
     document.getElementById("answer").innerText = word;
   });
 }
@@ -156,6 +178,9 @@ function intialize() {
       // Is the letter entered by the user in the correct position?
       if (word[c] == letter) {
         currTile.classList.add("correct");
+        let keyTile = document.getElementById("Key" + letter);
+        keyTile.classList.remove("present");
+        keyTile.classList.add("correct");
         correct += 1;
         word = word.split('');
         word[c] = 'x';
@@ -176,6 +201,11 @@ function intialize() {
         }
         if ((c == 0 || c == 4) || (inp.includes(letter))) {
           currTile.classList.add("present");
+          if (!currTile.classList.contains("correct")) {
+            let keyTile = document.getElementById("Key" + letter);
+            keyTile.classList.add("present");
+          }
+
         }
       }
 
