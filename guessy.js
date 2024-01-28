@@ -8,40 +8,18 @@ var inp = ""; // the full word entered by the user
 var gameOver = false;
 
 const fiveLetterWords = [
-  "APPLE", "CHAIR", "BLOOM", "FROG",
-  "SUNNY", "BIRD", "DANCE", "RIVER",
-  "PLANT", "SMILE", "GRASS", "HAPPY",
-  "ROCKS", "QUIET", "SLEEP", "LEMON", "WATER",
-  "FIRED", "SNAKE", "LAUGH", "SWEET", "CRANE",
-  "TABLE", "LUNCH", "MOUSE", "HOUSE", "SMOKE",
-  "GLASS", "GRAND", "MUSIC", "STARS", "CLOUD",
-  "CHALK", "GRASS", "STAIR", "SHEET", "STORM",
-  "CROWN", "CRISP", "BRUSH", "QUICK", "WATER",
-  "SHIRT", "THORN", "PLATE", "BLINK", "PLUCK",
-  "PAULA", "SKIRT", "CHASE", "BLOOD", "CROWD",
-  "ALERT", "ARISE", "ACTOR", "ADULT",
-  "BOOST", "BRAIN", "BROWN", "BUILT",
-  "CARRY", "CHILD", "CLOSE", "COUNT",
-  "DANCE", "DREAM", "DRIVE", "DRINK",
-  "EARLY", "ENJOY", "EMPTY", "ENTER",
-  "FAULT", "FIELD", "FLASH", "FLUID",
-  "GLOBE", "GRAND", "GREAT", "GROSS",
-  "HAPPY", "HOUSE", "HUMAN", "HEAVY",
-  "ISSUE", "INPUT", "INDEX", "IMAGE",
-  "JUICE", "JOINT", "JELLY", "JEANS",
-  "KNOWN", "KNOCK", "KNIFE", "KILLS",
-  "LIGHT", "LEVEL", "LEAVE", "LEARN",
-  "MIXER", "MEALS", "MARRY", "MAGIC",
-  "NOVEL", "NOISE", "NEWLY", "NIGHT",
-  "OUGHT", "OTHER", "ORDER", "OFFER",
-  "PAINT", "PAPER", "ROUND", "ROYAL",
-  "SHARE", "SHARP", "SHAPE", "SCORE",
-  "TAKEN", "TEACH", "THANK", "THICK",
-  "UPSET", "USAGE", "USUAL", "UPPER",
-  "VALUE", "VIDEO", "VIRAL", "VOICE",
-  "WORST", "WHOLE", "WORLD", "WRONG",
-  "YOUTH", "YEARS", "YOUNG", "YARDS", "ZEROS"
-];
+  "ACTOR", "ADULT", "ALERT", "APPLE", "ARISE", "BLOOM", "BLINK", "BLOOD", "BOOST", "BRAIN", "BROWN", "BUILT", "CARRY",
+  "CHAIR", "CHALK", "CHASE", "CHILD", "CLOSE", "CLOUD", "COUNT", "CRANE", "CRISP", "CROWN", "CROWD", "DANCE", "DREAM",
+  "DRINK", "DRIVE", "EARLY", "EMPTY", "ENJOY", "ENTER", "FAULT", "FIELD", "FIRED", "FLASH", "FLUID", "GLASS", "GLOBE",
+  "GRAND", "GRASS", "GREAT", "GROSS", "HAPPY", "HOUSE", "HUMAN", "IMAGE", "INDEX", "INPUT", "ISSUE", "JEANS", "JELLY",
+  "JOINT", "JUICE", "KILLS", "KNIFE", "KNOCK", "KNOWN", "LAUGH", "LEARN", "LEAVE", "LEMON", "LEVEL", "LIGHT", "LUNCH",
+  "MAGIC", "MARRY", "MEALS", "MIXER", "MOUSE", "MUSIC", "NEWLY", "NIGHT", "NOISE", "NOVEL", "OFFER", "ORDER", "OTHER",
+  "OUGHT", "PAINT", "PAPER", "PAULA", "PLANT", "PLATE", "PLUCK", "QUICK", "QUIET", "RIVER", "ROCKS", "ROUND", "ROYAL",
+  "SCORE", "SHAPE", "SHARE", "SHARP", "SHEET", "SHIRT", "SKIRT", "SLEEP", "SMILE", "SMOKE", "SNAKE", "STAIR", "STARS",
+  "STORM", "SUNNY", "SWEET", "TABLE", "TAKEN", "TEACH", "THANK", "THICK", "THORN", "UPPER", "UPSET", "USAGE", "USUAL",
+  "VALUE", "VIDEO", "VIRAL", "VOICE", "WATER", "WHOLE", "WORLD", "WORST", "WRONG", "YARDS", "YEARS", "YOUNG", "YOUTH",
+  "ZEROS"
+ ];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
 // Use the random index to get a random word
@@ -178,9 +156,11 @@ function intialize() {
       // Is the letter entered by the user in the correct position?
       if (word[c] == letter) {
         currTile.classList.add("correct");
+
         let keyTile = document.getElementById("Key" + letter);
         keyTile.classList.remove("present");
         keyTile.classList.add("correct");
+        
         correct += 1;
         word = word.split('');
         word[c] = 'x';
