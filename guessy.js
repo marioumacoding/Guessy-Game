@@ -16,9 +16,9 @@ const fiveLetterWords = [
   "MAGIC", "MARRY", "MEALS", "MIXER", "MOUSE", "MUSIC", "NEWLY", "NIGHT", "NOISE", "NOVEL", "OFFER", "ORDER", "OTHER",
   "OUGHT", "PAINT", "PAPER", "PLANT", "PLATE", "PLUCK", "QUICK", "QUIET", "RIVER", "ROCKS", "ROUND", "ROYAL", "SCORE",
   "SHAPE", "SHARE", "SHARP", "SHEET", "SHIRT", "SKIRT", "SLEEP", "SMILE", "SMOKE", "SNAKE", "STAIR", "STARS", "STORM",
-  "SUNNY", "SWEET", "TABLE", "TAKEN", "TEACH", "THANK", "THICK", "THORN", "UPPER", "UPSET", "USAGE", "USUAL", "VALUE", 
+  "SUNNY", "SWEET", "TABLE", "TAKEN", "TEACH", "THANK", "THICK", "THORN", "UPPER", "UPSET", "USAGE", "USUAL", "VALUE",
   "VIDEO", "VIRAL", "VOICE", "WATER", "WHOLE", "WORLD", "WORST", "WRONG", "YARDS", "YEARS", "YOUNG", "YOUTH", "ZEROS"
- ];
+];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
 // Use the random index to get a random word
@@ -159,7 +159,7 @@ function intialize() {
         let keyTile = document.getElementById("Key" + letter);
         keyTile.classList.remove("present");
         keyTile.classList.add("correct");
-        
+
         correct += 1;
         word = word.split('');
         word[c] = 'x';

@@ -135,13 +135,9 @@ hr {
 }
 
 button {
-  /* width: 50px;
-height: 50px; */
   font-family: 'Josefin Sans', sans-serif;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 11px;
-  padding-right: 11px;
+  padding: 4px 9px 4px 9px;
+  /*top right bottom left */
   margin-top: -10px;
   border-style: dashed;
   background-color: rgb(184, 182, 182);
@@ -150,13 +146,14 @@ height: 50px; */
   border-radius: 10px;
   cursor: pointer;
 }
+
 /* #buttons-container{
   display: flex;
   justify-content: flex-end;
 } */
 
 /* Media query for smaller screens */
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .key-tile {
     /* box */
     background-color: rgba(211, 211, 211, 0.289);
@@ -179,5 +176,61 @@ height: 50px; */
     width: 45px;
     height: 55px;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .key-tile {
+    /* box */
+    background-color: rgba(211, 211, 211, 0.289);
+    width: 30px;
+    height: 55px;
+    margin: 2.5px;
+    border-radius: 5px;
+    /*total 5px away from each tile */
+
+    /* text */
+    color: rgb(255, 254, 254);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .key-enter {
+    width: 45px;
+    height: 55px;
+    font-size: 16px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+@media(min-width: 601px) and (max-width: 750px) {
+  .key-tile {
+    /* box */
+    background-color: rgba(211, 211, 211, 0.289);
+    width: 35px;
+    height: 60px;
+    margin: 2.5px;
+    border-radius: 5px;
+    /*total 5px away from each tile */
+
+    /* text */
+    color: rgb(255, 254, 254);
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .key-enter {
+    width: 50px;
+    height: 60px;
+    font-size: 19px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 }
