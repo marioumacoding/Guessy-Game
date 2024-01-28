@@ -14,11 +14,10 @@ const fiveLetterWords = [
   "GRAND", "GRASS", "GREAT", "GROSS", "HAPPY", "HOUSE", "HUMAN", "IMAGE", "INDEX", "INPUT", "ISSUE", "JEANS", "JELLY",
   "JOINT", "JUICE", "KILLS", "KNIFE", "KNOCK", "KNOWN", "LAUGH", "LEARN", "LEAVE", "LEMON", "LEVEL", "LIGHT", "LUNCH",
   "MAGIC", "MARRY", "MEALS", "MIXER", "MOUSE", "MUSIC", "NEWLY", "NIGHT", "NOISE", "NOVEL", "OFFER", "ORDER", "OTHER",
-  "OUGHT", "PAINT", "PAPER", "PAULA", "PLANT", "PLATE", "PLUCK", "QUICK", "QUIET", "RIVER", "ROCKS", "ROUND", "ROYAL",
-  "SCORE", "SHAPE", "SHARE", "SHARP", "SHEET", "SHIRT", "SKIRT", "SLEEP", "SMILE", "SMOKE", "SNAKE", "STAIR", "STARS",
-  "STORM", "SUNNY", "SWEET", "TABLE", "TAKEN", "TEACH", "THANK", "THICK", "THORN", "UPPER", "UPSET", "USAGE", "USUAL",
-  "VALUE", "VIDEO", "VIRAL", "VOICE", "WATER", "WHOLE", "WORLD", "WORST", "WRONG", "YARDS", "YEARS", "YOUNG", "YOUTH",
-  "ZEROS"
+  "OUGHT", "PAINT", "PAPER", "PLANT", "PLATE", "PLUCK", "QUICK", "QUIET", "RIVER", "ROCKS", "ROUND", "ROYAL", "SCORE",
+  "SHAPE", "SHARE", "SHARP", "SHEET", "SHIRT", "SKIRT", "SLEEP", "SMILE", "SMOKE", "SNAKE", "STAIR", "STARS", "STORM",
+  "SUNNY", "SWEET", "TABLE", "TAKEN", "TEACH", "THANK", "THICK", "THORN", "UPPER", "UPSET", "USAGE", "USUAL", "VALUE", 
+  "VIDEO", "VIRAL", "VOICE", "WATER", "WHOLE", "WORLD", "WORST", "WRONG", "YARDS", "YEARS", "YOUNG", "YOUTH", "ZEROS"
  ];
 // Get a random index from the array
 const randomIndex = Math.floor(Math.random() * fiveLetterWords.length);
