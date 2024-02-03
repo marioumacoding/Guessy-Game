@@ -144,6 +144,7 @@ function intialize() {
 
   function update() {
     let correct = 0;
+    //for tests
     let word = fiveLetterWords[randomIndex];
     // let word = "HOUSE";
     var flag = false; // Added to track if the letter is found in the word
@@ -176,6 +177,7 @@ function intialize() {
           if (letter == inp[m]) {  // 2
             flag = true;
             currTile.classList.add("absent");
+
           }
         }
         if ((c == 0 || c == 4) || (inp.includes(letter))) {
@@ -201,6 +203,9 @@ function intialize() {
       // // the letter is not found
       else {
         currTile.classList.add("absent");
+        let keyTile = document.getElementById("Key" + letter);
+        if (!keyTile.classList.contains("correct") || !keyTile.classList.contains("present"))
+          keyTile.classList.add("absent");
       }
       // Check if the entered word is valid
       if (correct == width) {

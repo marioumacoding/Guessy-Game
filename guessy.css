@@ -49,21 +49,42 @@ hr {
 }
 
 .correct {
-  background-color: green;
+  background-color: rgb(13, 78, 13);
   color: white;
-  border-color: rgba(3, 108, 12, 0.875);
+  border-color: rgba(5, 40, 10, 0.875);
   /*to blend with the background */
 }
 
 .present {
-  background-color: rgb(191, 191, 36);
+  background-color: rgb(156, 156, 49);
   color: white;
   border-color: rgb(127, 143, 30);
   /*to blend with the background */
 }
 
 .absent {
-  background-color: grey;
+  background-color: rgb(58, 58, 60);
+  color: white;
+  border-color: rgb(53, 52, 52);
+  /*to blend with the background */
+}
+
+.key-tile.present {
+  background-color: rgb(156, 156, 49);
+  color: white;
+  border-color: rgb(127, 143, 30);
+  /* to blend with the background */
+}
+
+.key-tile.correct {
+  background-color: rgb(13, 78, 13);
+  color: white;
+  border-color: rgba(7, 39, 12, 0.875);
+  /*to blend with the background */
+}
+
+.key-tile.absent {
+  background-color: rgb(58, 58, 60);
   color: white;
   border-color: rgb(96, 96, 96);
   /*to blend with the background */
@@ -90,7 +111,7 @@ hr {
 
 .key-tile {
   /* box */
-  background-color: rgba(211, 211, 211, 0.289);
+  background-color: rgb(135, 133, 133);
   width: 43px;
   height: 58px;
   margin: 2.5px;
@@ -108,7 +129,7 @@ hr {
 
 .key-enter {
   /* box */
-  background-color: rgba(211, 211, 211, 0.289);
+  background-color: rgb(135, 133, 133);
   width: 73px;
   height: 58px;
   margin: 2.5px;
