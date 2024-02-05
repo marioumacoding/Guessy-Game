@@ -1,6 +1,6 @@
 # How to Play GUESSY
 
-Wordle is a word-guessing game where the goal is to guess a hidden five-letter word. Here's how you can play:
+A word-guessing game where the goal is to guess a hidden five-letter word. Here's how you can play:
 
 1. **Guess a Word:**
    - Each guess you make must be a valid five-letter word.
